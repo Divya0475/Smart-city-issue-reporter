@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Smart City Issue Reporting</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            margin: 0;
+            height: 100vh;
+            background: #eef3f7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* COMMON BOX STYLE */
+        .box {
+            background: #ffffff;
+            width: 360px;
+            padding: 25px 30px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        /* FORM STYLES */
+        h2 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #6c7a89;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-size: 14px;
+            color: #34495e;
+            margin-top: 10px;
+            display: block;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 9px;
+            margin-top: 5px;
+            border-radius: 6px;
+            border: 1px solid #ccd6dd;
+            font-size: 14px;
+        }
+
+        input:focus, select:focus {
+            outline: none;
+            border-color: #5dade2;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 20px;
+            background: #5dade2;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 15px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #3498db;
+        }
+
+        /* SUCCESS STYLES */
+        .success h2 {
+            color: #27ae60;
+            margin-bottom: 15px;
+        }
+
+        .success p {
+            text-align: center;
+            color: #34495e;
+            font-size: 14px;
+        }
+
+        .success h3 {
+            text-align: center;
+            color: #2c3e50;
+            margin: 10px 0 15px 0;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="box">
+
+    {% if reference_id %}
+    <!-- ✅ SUCCESS PAGE -->
+    <div class="success">
+        <h2>✅ Issue Submitted Successfully</h2>
+        <p>Your reference ID is:</p>
+        <h3>{{ reference_id }}</h3>
+        <p>Please check your email for confirmation.</p>
+    </div>
+
+    {% else %}
+    <!-- 📝 FORM PAGE -->
+    <h2>Report an Infrastructure Issue</h2>
+    <p class="subtitle">Help us improve your city</p>
+
+    <form method="POST" action="/submit">
+
+        <label>City</label>
+        <select name="city" required>
+            <option>Hyderabad</option>
+            <option>Bangalore</option>
+            <option>Chennai</option>
+        </select>
+
+        <label>Area</label>
+        <input type="text" name="area" required>
+
+        <label>Street</label>
+        <input type="text" name="street" required>
+
+        <label>Issue Type</label>
+        <select name="issue" required>
+            <option>Pothole</option>
+            <option>Broken Streetlight</option>
+            <option>Garbage Overflow</option>
+            <option>Water Leakage</option>
+        </select>
+
+        <label>Email</label>
+        <input type="email" name="email" required>
+
+        <button type="submit">Submit Issue</button>
+    </form>
+    {% endif %}
+
+</div>
+
+</body>
+</html>
