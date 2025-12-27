@@ -2,16 +2,16 @@
 ---
 
 ```md
-# Smart City Issue Reporting System
+**Smart City Issue Reporting System**
 
-## Project Overview
+ Project Overview
 The Smart City Issue Reporting System is a lightweight web application that allows citizens to report infrastructure-related problems such as potholes, broken streetlights, garbage overflow, and water leakage. The system captures location details, stores reports in a database, and generates a unique reference ID for each submission.
 
 This project is implemented as a **Minimum Viable Product (MVP)** to demonstrate how digital platforms can support smart city initiatives and improve issue tracking and transparency.
 
 ---
 
-## Features
+Features
 - Citizen-friendly issue reporting form  
 - Location selection (City, Area, Street)  
 - Infrastructure issue selection  
@@ -23,7 +23,7 @@ This project is implemented as a **Minimum Viable Product (MVP)** to demonstrate
 
 ---
 
-## Technologies Used
+Technologies Used
 - **Backend:** Python (Flask)
 - **Frontend:** HTML, CSS (internal styling)
 - **Database:** SQLite
@@ -33,7 +33,7 @@ This project is implemented as a **Minimum Viable Product (MVP)** to demonstrate
 
 ---
 
-## How the Application Works
+ How the Application Works
 1. The user fills in the issue reporting form with location details and email.
 2. On submission, the backend generates a unique reference ID.
 3. The issue details are stored in the SQLite database.
@@ -42,12 +42,12 @@ This project is implemented as a **Minimum Viable Product (MVP)** to demonstrate
 
 ---
 
-## Email Trigger Implementation
+Email Trigger Implementation
 For demonstration purposes, the email confirmation feature is simulated at the backend level using console logs. This approach is used due to SMTP security restrictions in local environments. The logic represents how confirmation emails would be sent in a production setup.
 
 ---
 
-## Project Structure
+Project Structure
 ```
 
 smart-city-issue-reporting/
@@ -66,7 +66,7 @@ smart-city-issue-reporting/
 1. Clone the repository:
 ```
 
-git clone <your-github-repo-link>
+git clone <https://github.com/Divya0475/Smart-city-issue-reporter>
 
 ```
 2. Navigate to the project folder:
@@ -96,12 +96,12 @@ python app.py
 
 ---
 
-## Deployment
+Deployment
 The application is deployed using **Render** with Gunicorn as the production server. The live URL can be accessed from the Render dashboard after deployment.
 
 ---
 
-## Future Enhancements
+ Future Enhancements
 - Integration with real email services
 - Sensor-based issue verification
 - Admin dashboard for authorities
@@ -110,7 +110,7 @@ The application is deployed using **Render** with Gunicorn as the production ser
 
 ---
 
-## Author
+Author
 Developed as part of the **Smart City Lab – Recruitment Task**.
 ```
 
