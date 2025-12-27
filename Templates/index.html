@@ -108,7 +108,7 @@
     <div class="success">
         <h2>✅ Issue Submitted Successfully</h2>
         <p>Your reference ID is:</p>
-        <h3>{{ reference_id }}</h3>
+        <h3>{{ reference_id | default('') }}</h3>
         <p>Please check your email for confirmation.</p>
     </div>
 

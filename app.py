@@ -44,7 +44,10 @@ def send_confirmation_email(receiver_email, reference_id, issue, city, area, str
 # -----------------------------
 # ROUTES
 # -----------------------------
-@app.route("/")
+@app.route("/", methods=["GET", "HEAD"])
+def index():
+    return render_template("index.html", reference_id=None)
+
 def index():
     # Initial page load → show form
     return render_template("index.html", reference_id=None)
